@@ -15,5 +15,10 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
         console.log('New:' + newValue);
         
     });
-    
+
+    setTimeout(function() {
+        $scope.twHandle = 'newTwitterHandler';
+        console.log('Changed the value for twHandle!');
+    }, 3000);
+
 }]);
