@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp', []);
 
-myApp.controller('mainController', ['$scope', '$filter', function($scope, $filter) {
+myApp.controller('mainController', ['$scope', '$filter', '$timeout', function($scope, $filter, $timeout) {
     
     $scope.twHandle = '';
 
@@ -16,13 +16,11 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
         
     });
 
-    setTimeout(function() {
+    $timeout(function() {
 
-        $scope.$apply(function() {
-            $scope.twHandle = 'newTwitterHandler';
-            console.log('Changed the value for twHandle!');
-            console.log($scope.twHandle);
-        });
+        $scope.twHandle = 'newTwitterHandler';
+        console.log('Changed the value for twHandle!');
+        console.log($scope.twHandle);
         
     }, 3000);
 
